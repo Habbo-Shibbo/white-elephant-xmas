@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>白大象聖誕禮物交換</title>
+<meta name="description" content="White Elephant Gift Exchange・12/21–12/23 晚上・報名到 11/15">
+<meta property="og:title" content="🐘🎄 白大象聖誕禮物交換 White Elephant Gift Exchange">
+<meta property="og:description" content="12/21–12/23 擇一晚上，帶一份「拿出來大家會尖叫」的禮物來搶！報名到 11/15。">
+<meta name="theme-color" content="#3a0a1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wine:#6d0b26; --wine-deep:#3a0a1a; --berry:#b3163f;
+  --pine:#0e4a37; --pine-deep:#06261c; --mint:#7fd6b0;
+  --gold:#f2c14e; --gold-soft:#ffe39a; --gold-deep:#b9851f;
+  --cream:#fff6e6; --ink:#2b1414; --muted:#f3dfc8;
+  --card:rgba(255,246,230,.08); --card-line:rgba(242,193,78,.35);
+  --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--cream); font-family:"Noto Sans TC",system-ui,sans-serif; line-height:1.7;
+  background:
+    radial-gradient(1200px 700px at 15% -10%, rgba(179,22,63,.55), transparent 60%),
+    radial-gradient(900px 600px at 100% 20%, rgba(14,74,55,.75), transparent 60%),
+    radial-gradient(800px 800px at 0% 80%, rgba(14,74,55,.6), transparent 60%),
+    radial-gradient(700px 500px at 90% 100%, rgba(109,11,38,.8), transparent 60%),
+    linear-gradient(160deg, var(--wine-deep), #1a0a14 45%, var(--pine-deep));
+  background-attachment:fixed;
+  min-height:100vh; overflow-x:hidden;
+}
+#snow{position:fixed; inset:0; pointer-events:none; z-index:1}
+.bokeh{position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden}
+.bokeh span{position:absolute; border-radius:50%; filter:blur(2px); opacity:.35; animation:float 14s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-30px) scale(1.08); opacity:.55}}
+main{position:relative; z-index:2}
+.wrap{max-width:980px; margin:0 auto; padding:0 16px}
+h1,h2,h3{font-family:"Noto Serif TC",serif; margin:0}
+.en{font-family:"Great Vibes",cursive; color:var(--gold-soft); font-weight:400}
+
+/* ---------- lights ---------- */
+.lights{display:flex; justify-content:space-between; padding:0 6px; height:34px; position:relative; z-index:3;
+  background:radial-gradient(ellipse 50% 40px at 50% -14px, transparent 95%, rgba(255,255,255,.25) 96%, transparent 100%) repeat-x; background-size:60px 40px}
+.lights i{width:11px; height:16px; border-radius:50% 50% 45% 45%; margin-top:12px; animation:twinkle 1.6s infinite}
+.lights i:nth-child(4n+1){background:#ff4d6d; color:#ff4d6d}
+.lights i:nth-child(4n+2){background:var(--gold); color:var(--gold); animation-delay:.4s}
+.lights i:nth-child(4n+3){background:var(--mint); color:var(--mint); animation-delay:.8s}
+.lights i:nth-child(4n+4){background:#8ec5ff; color:#8ec5ff; animation-delay:1.2s}
+@keyframes twinkle{0%,100%{box-shadow:0 0 14px 3px currentColor; opacity:1}50%{box-shadow:0 0 2px 0 currentColor; opacity:.45}}
+
+/* ---------- hero ---------- */
+.hero{text-align:center; padding:28px 0 40px}
+.badge{display:inline-block; padding:6px 16px; border:1px solid var(--card-line); border-radius:99px; font-size:.85rem; letter-spacing:.12em; color:var(--gold-soft); background:rgba(0,0,0,.2)}
+.hero h1{font-size:clamp(2.3rem,8.5vw,4.6rem); font-weight:900; line-height:1.15; margin:18px 0 4px;
+  background:linear-gradient(180deg,#fff7dd 10%,var(--gold) 55%,var(--gold-deep)); -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter:drop-shadow(0 4px 18px rgba(242,193,78,.35))}
+.hero .en{font-size:clamp(1.7rem,6vw,2.8rem)}
+.hero p.lead{max-width:560px; margin:14px auto 0; color:var(--muted); font-size:1.05rem}
+.scene{position:relative; width:min(520px,100%); margin:18px auto 0; aspect-ratio:520/330}
+.scene svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible}
+.elephant{animation:bob 3.2s ease-in-out infinite; transform-origin:300px 300px}
+@keyframes bob{50%{transform:translateY(-6px) rotate(-1deg)}}
+.cta{display:inline-flex; align-items:center; gap:10px; margin-top:22px; padding:15px 32px; border-radius:99px; border:0; cursor:pointer;
+  font:700 1.1rem "Noto Sans TC",sans-serif; color:var(--wine-deep); text-decoration:none;
+  background:linear-gradient(135deg,var(--gold-soft),var(--gold) 50%,#e49b2b); box-shadow:0 10px 30px rgba(242,193,78,.4), inset 0 -3px 0 rgba(0,0,0,.15);
+  transition:transform .2s}
+.cta:hover{transform:translateY(-2px) scale(1.03)}
+.cta small{font-weight:500; opacity:.75}
+
+/* egg easter egg */
+#egg{cursor:pointer; transform-box:fill-box; transform-origin:50% 0%}
+#egg.wiggle{animation:wiggle .7s ease-in-out}
+@keyframes wiggle{20%{transform:rotate(14deg)}45%{transform:rotate(-12deg)}70%{transform:rotate(6deg)}100%{transform:rotate(0)}}
+#egg .crack{opacity:0; transition:opacity .2s}
+#egg.c1 .k1,#egg.c2 .k1,#egg.c2 .k2,#egg.c3 .k1,#egg.c3 .k2,#egg.c3 .k3{opacity:1}
+.knock{position:absolute; font:700 .9rem "Noto Sans TC"; color:var(--gold-soft); pointer-events:none; animation:knock .8s ease-out forwards; text-shadow:0 0 8px rgba(0,0,0,.6)}
+@keyframes knock{to{transform:translateY(-28px); opacity:0}}
+
+/* ---------- sections ---------- */
+section{padding:46px 0}
+.sec-head{text-align:center; margin-bottom:26px}
+.sec-head h2{font-size:clamp(1.6rem,5vw,2.3rem); color:var(--cream)}
+.sec-head .en{display:block; font-size:clamp(1.4rem,4.5vw,2rem); margin-top:-2px}
+.sec-head p{color:var(--muted); margin:8px auto 0; max-width:560px}
+
+.grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.card{background:linear-gradient(160deg,rgba(255,246,230,.12),rgba(255,246,230,.04)); border:1px solid var(--card-line); border-radius:var(--radius);
+  padding:22px 20px; backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); position:relative; overflow:hidden}
+.card .ico{font-size:2rem; line-height:1}
+.card h3{font-size:1.2rem; margin:10px 0 2px; color:var(--gold-soft)}
+.card .sub{font-size:.85rem; color:var(--gold); letter-spacing:.04em}
+.card p{margin:8px 0 0; color:var(--muted); font-size:.98rem}
+.card strong{color:var(--cream)}
+.countdown{display:flex; gap:8px; margin-top:10px}
+.countdown div{flex:1; text-align:center; background:rgba(0,0,0,.25); border-radius:12px; padding:6px 0}
+.countdown b{display:block; font:900 1.4rem "Noto Serif TC"; color:var(--gold)}
+.countdown span{font-size:.72rem; color:var(--muted)}
+
+/* rules */
+.steps{counter-reset:s; display:grid; gap:14px}
+.step{display:grid; grid-template-columns:52px 1fr; gap:14px; align-items:start; background:var(--card); border:1px solid var(--card-line); border-radius:18px; padding:16px 18px}
+.step::before{counter-increment:s; content:counter(s); width:52px; height:52px; border-radius:50%; display:grid; place-items:center;
+  font:900 1.4rem "Noto Serif TC"; color:var(--wine-deep); background:radial-gradient(circle at 35% 30%,#fff3c4,var(--gold) 55%,var(--gold-deep))}
+.step h3{font-size:1.08rem; color:var(--gold-soft)}
+.step p{margin:4px 0 0; color:var(--muted); font-size:.96rem}
+.step .en-line{display:block; font-size:.85rem; color:var(--mint); margin-top:2px}
+.callout{margin-top:18px; padding:16px 18px; border-radius:18px; background:linear-gradient(135deg,rgba(179,22,63,.45),rgba(109,11,38,.35)); border:1px dashed var(--gold)}
+.callout b{color:var(--gold-soft)}
+
+/* gift rules */
+.budget{display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-bottom:22px}
+.price{flex:1 1 220px; max-width:300px; text-align:center; padding:20px; border-radius:var(--radius); border:1px solid var(--card-line); background:var(--card)}
+.price .num{font:900 2.3rem "Noto Serif TC"; color:var(--gold)}
+.price.best{background:linear-gradient(160deg,rgba(14,74,55,.85),rgba(6,38,28,.7)); border-color:var(--mint)}
+.price.best .num{color:var(--mint)}
+.price .lbl{font-size:.9rem; color:var(--muted)}
+.dodont{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.dodont .card.yes{border-color:rgba(127,214,176,.55)}
+.dodont .card.no{border-color:rgba(255,77,109,.5); background:linear-gradient(160deg,rgba(179,22,63,.28),rgba(58,10,26,.35))}
+.dodont ul{margin:10px 0 0; padding:0; list-style:none}
+.dodont li{padding:7px 0 7px 30px; position:relative; color:var(--muted); border-bottom:1px dashed rgba(255,246,230,.12)}
+.dodont li:last-child{border-bottom:0}
+.yes li::before{content:"🎁"; position:absolute; left:0}
+.no li::before{content:"🚫"; position:absolute; left:0}
+.stamp{position:absolute; right:-8px; top:14px; transform:rotate(12deg); border:3px solid #ff4d6d; color:#ff4d6d; font:900 .85rem "Noto Sans TC"; padding:3px 10px; border-radius:8px; letter-spacing:.1em; opacity:.85}
+
+/* form */
+.form-card{max-width:640px; margin:0 auto; background:linear-gradient(170deg,rgba(255,246,230,.97),#fbe9cf); color:var(--ink); border-radius:28px; padding:28px 22px; box-shadow:0 30px 60px rgba(0,0,0,.45); position:relative}
+.form-card::before{content:""; position:absolute; inset:-6px; border-radius:32px; z-index:-1;
+  background:repeating-linear-gradient(45deg,var(--berry) 0 14px,#fff 14px 28px,var(--pine) 28px 42px,#fff 42px 56px)}
+.form-card h3{font-size:1.4rem; color:var(--wine); text-align:center}
+.field{margin-top:18px}
+.field > label, .field > .lbl{display:block; font-weight:700; color:var(--wine); margin-bottom:6px}
+.field .hint{font-weight:400; font-size:.85rem; color:#7a5a4a}
+input[type=text], textarea, select{width:100%; padding:12px 14px; border-radius:14px; border:2px solid #e8cfa8; background:#fffaf2; font:500 1rem "Noto Sans TC"; color:var(--ink); transition:border-color .2s, box-shadow .2s}
+input[type=text]:focus, textarea:focus, select:focus{outline:0; border-color:var(--berry); box-shadow:0 0 0 4px rgba(179,22,63,.15)}
+textarea{min-height:110px; resize:vertical}
+.chips{display:flex; flex-wrap:wrap; gap:10px}
+.chip{position:relative}
+.chip input{position:absolute; opacity:0; inset:0; cursor:pointer}
+.chip span{display:block; padding:10px 16px; border-radius:16px; border:2px solid #e8cfa8; background:#fffaf2; font-weight:500; cursor:pointer; transition:all .18s; text-align:center; line-height:1.35}
+.chip span small{display:block; font-size:.75rem; color:#8a6a5a}
+.chip input:checked + span{background:linear-gradient(135deg,var(--berry),var(--wine)); color:#fff; border-color:var(--wine); transform:translateY(-2px); box-shadow:0 6px 14px rgba(109,11,38,.3)}
+.chip input:checked + span small{color:var(--gold-soft)}
+.chip input:focus-visible + span{outline:3px solid var(--gold); outline-offset:2px}
+.dates .chip{flex:1 1 140px}
+.err{color:var(--berry); font-size:.88rem; margin-top:6px; display:none}
+.err.show{display:block}
+.hp{position:absolute; left:-9999px}
+.submit{width:100%; justify-content:center; margin-top:26px; color:#fff; background:linear-gradient(135deg,#d42a55,var(--wine)); box-shadow:0 10px 24px rgba(109,11,38,.35)}
+.submit[disabled]{opacity:.6; cursor:wait}
+.note{font-size:.82rem; color:#7a5a4a; text-align:center; margin-top:12px}
+
+.done{display:none; text-align:center}
+.done.show{display:block}
+.done h3{font-size:1.6rem}
+.line-box{margin:20px auto 0; padding:18px; border-radius:20px; background:#06c755; color:#fff; max-width:360px}
+.line-box a{display:inline-block; margin-top:10px; padding:12px 26px; border-radius:99px; background:#fff; color:#06a548; font-weight:700; text-decoration:none}
+#qr{background:#fff; padding:10px; border-radius:12px; display:inline-block; margin-top:12px}
+#qr img, #qr canvas{display:block; width:150px; height:150px}
+
+footer{text-align:center; padding:40px 16px 60px; color:var(--muted); font-size:.85rem}
+footer .en{font-size:1.6rem}
+
+/* reveal overlay */
+#reveal{position:fixed; inset:0; z-index:50; display:none; place-items:center; background:radial-gradient(circle,rgba(58,10,26,.85),rgba(0,0,0,.92)); padding:16px}
+#reveal.show{display:grid; animation:fade .4s}
+@keyframes fade{from{opacity:0}}
+#reveal .box{text-align:center; max-width:420px}
+#reveal .big{font:900 clamp(5rem,28vw,9rem) "Noto Serif TC"; line-height:1;
+  background:linear-gradient(180deg,#fff7dd,var(--gold) 50%,var(--gold-deep)); -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter:drop-shadow(0 0 30px rgba(242,193,78,.6)); animation:pop .7s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{from{transform:scale(.2) rotate(-20deg); opacity:0}}
+#reveal p{font-size:1.25rem; margin:14px 0 4px; color:var(--cream)}
+#reveal small{color:var(--muted)}
+#reveal button{margin-top:22px}
+#confetti{position:fixed; inset:0; pointer-events:none; z-index:60}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+</style>
+</head>
+<body>
+<div class="bokeh" id="bokeh"></div>
+<canvas id="snow"></canvas>
+<canvas id="confetti"></canvas>
+
+<main>
+  <div class="lights" id="lights"></div>
+
+  <header class="hero wrap">
+    <span class="badge">🎄 CHRISTMAS PARTY 2026 🎄</span>
+    <h1>白大象<br>聖誕禮物交換</h1>
+    <div class="en">White Elephant Gift Exchange</div>
+    <p class="lead">帶一份禮物來，抽號碼、拆禮物、<b>搶禮物</b>！<br>友情會不會在今晚破裂？歡迎來挑戰 🐘</p>
+
+    <div class="scene" id="scene">
+      <svg viewBox="0 0 520 330" aria-hidden="false" role="img" aria-label="戴聖誕帽的白大象和聖誕樹">
+        <defs>
+          <radialGradient id="gGold" cx=".35" cy=".3"><stop offset="0" stop-color="#fff3c4"/><stop offset=".55" stop-color="#f2c14e"/><stop offset="1" stop-color="#b9851f"/></radialGradient>
+          <radialGradient id="gRed" cx=".35" cy=".3"><stop offset="0" stop-color="#ff8fa6"/><stop offset=".6" stop-color="#d42a55"/><stop offset="1" stop-color="#6d0b26"/></radialGradient>
+          <radialGradient id="gBlue" cx=".35" cy=".3"><stop offset="0" stop-color="#d8ecff"/><stop offset=".6" stop-color="#5aa6ff"/><stop offset="1" stop-color="#1f4f9a"/></radialGradient>
+          <linearGradient id="gTree" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f7a57"/><stop offset="1" stop-color="#0a3a2a"/></linearGradient>
+          <linearGradient id="gEle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dfe3ea"/></linearGradient>
+          <radialGradient id="gEgg" cx=".38" cy=".3"><stop offset="0" stop-color="#fffbe8"/><stop offset=".5" stop-color="#f7d77a"/><stop offset="1" stop-color="#c8922a"/></radialGradient>
+          <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+
+        <!-- ground glow -->
+        <ellipse cx="260" cy="318" rx="240" ry="14" fill="rgba(255,246,230,.18)"/>
+
+        <!-- tree -->
+        <g transform="translate(60 10)">
+          <rect x="68" y="262" width="26" height="40" rx="4" fill="#5a3418"/>
+          <path d="M81 20 L150 120 L118 120 L165 190 L128 190 L178 268 L-16 268 L34 190 L-3 190 L44 120 L12 120 Z" fill="url(#gTree)" stroke="#0a3a2a" stroke-width="2"/>
+          <path d="M28 150 Q81 175 136 145 M14 222 Q81 255 152 218" fill="none" stroke="#f2c14e" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"/>
+          <polygon points="81,0 88,18 107,18 92,29 98,47 81,36 64,47 70,29 55,18 74,18" fill="url(#gGold)" filter="url(#glow)"/>
+          <circle cx="60" cy="110" r="8" fill="url(#gRed)"/>
+          <circle cx="112" cy="160" r="9" fill="url(#gBlue)"/>
+          <circle cx="40" cy="200" r="9" fill="url(#gGold)"/>
+          <circle cx="135" cy="245" r="10" fill="url(#gRed)"/>
+          <circle cx="20" cy="250" r="8" fill="url(#gBlue)"/>
+          <circle cx="92" cy="80" r="7" fill="url(#gGold)"/>
+          <!-- golden egg ornament (easter egg) -->
+          <g id="egg" tabindex="0" role="button" aria-label="一顆金色的蛋">
+            <line x1="76" y1="196" x2="76" y2="208" stroke="#f2c14e" stroke-width="1.5"/>
+            <ellipse cx="76" cy="222" rx="11" ry="14" fill="url(#gEgg)" stroke="#b9851f" stroke-width="1"/>
+            <path class="crack k1" d="M68 216 l4 3 l-2 3 l5 2" stroke="#7a4f10" stroke-width="1.3" fill="none"/>
+            <path class="crack k2" d="M84 214 l-4 4 l3 3 l-4 3" stroke="#7a4f10" stroke-width="1.3" fill="none"/>
+            <path class="crack k3" d="M70 230 l5 -3 l3 4 l5 -3" stroke="#7a4f10" stroke-width="1.3" fill="none"/>
+            <ellipse cx="72" cy="216" rx="3" ry="4" fill="rgba(255,255,255,.7)"/>
+          </g>
+        </g>
+
+        <!-- gifts -->
+        <g>
+          <rect x="230" y="270" width="46" height="40" rx="4" fill="#d42a55"/><rect x="249" y="270" width="8" height="40" fill="#f2c14e"/><rect x="230" y="285" width="46" height="8" fill="#f2c14e"/>
+          <path d="M253 270 q-16 -18 -20 -4 q4 8 20 4 q16 -18 20 -4 q-4 8 -20 4" fill="#f2c14e"/>
+          <rect x="455" y="282" width="38" height="30" rx="4" fill="#1f7a57"/><rect x="470" y="282" width="7" height="30" fill="#fff6e6"/>
+          <rect x="196" y="290" width="30" height="22" rx="3" fill="#5aa6ff"/><rect x="208" y="290" width="6" height="22" fill="#fff6e6"/>
+        </g>
+
+        <!-- elephant -->
+        <g class="elephant">
+          <!-- legs -->
+          <rect x="318" y="250" width="26" height="56" rx="12" fill="url(#gEle)" stroke="#c7ccd6" stroke-width="2"/>
+          <rect x="412" y="250" width="26" height="56" rx="12" fill="url(#gEle)" stroke="#c7ccd6" stroke-width="2"/>
+          <!-- tail -->
+          <path d="M448 220 q22 6 18 30" stroke="#c7ccd6" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <!-- body -->
+          <ellipse cx="385" cy="225" rx="72" ry="58" fill="url(#gEle)" stroke="#c7ccd6" stroke-width="2"/>
+          <rect x="350" y="255" width="26" height="54" rx="12" fill="url(#gEle)" stroke="#c7ccd6" stroke-width="2"/>
+          <rect x="390" y="255" width="26" height="54" rx="12" fill="url(#gEle)" stroke="#c7ccd6" stroke-width="2"/>
+          <!-- scarf -->
+          <path d="M318 196 q20 18 46 8" stroke="#d42a55" stroke-width="12" fill="none" stroke-linecap="round"/>
+          <path d="M330 206 l-6 30 l12 -2 z" fill="#d42a55"/>
+          <!-- head -->
+          <circle cx="318" cy="168" r="46" fill="url(#gEle)" stroke="#c7ccd6" stroke-width="2"/>
+          <!-- ear -->
+          <path d="M346 140 q42 -6 40 38 q-4 32 -40 24 z" fill="#f4dce3" stroke="#c7ccd6" stroke-width="2"/>
+          <!-- trunk holding gift -->
+          <path d="M282 180 q-22 22 -14 50 q4 12 -8 18" stroke="url(#gEle)" stroke-width="22" fill="none" stroke-linecap="round"/>
+          <path d="M282 180 q-22 22 -14 50 q4 12 -8 18" stroke="#c7ccd6" stroke-width="22" fill="none" stroke-linecap="round" opacity=".25"/>
+          <rect x="232" y="236" width="34" height="30" rx="3" fill="#f2c14e" transform="rotate(-10 249 251)"/>
+          <rect x="246" y="234" width="7" height="32" fill="#d42a55" transform="rotate(-10 249 251)"/>
+          <!-- eye & cheek -->
+          <ellipse cx="306" cy="160" rx="5" ry="6.5" fill="#2b1414"/><circle cx="308" cy="157" r="1.8" fill="#fff"/>
+          <ellipse cx="296" cy="180" rx="8" ry="5" fill="#ffb3c4" opacity=".7"/>
+          <!-- santa hat -->
+          <path d="M282 132 q30 -70 92 -40 q-14 6 -22 30 z" fill="#d42a55"/>
+          <circle cx="378" cy="92" r="10" fill="#fff"/>
+          <rect x="276" y="122" width="82" height="18" rx="9" fill="#fff" transform="rotate(-12 317 131)"/>
+        </g>
+      </svg>
+    </div>
+
+    <a class="cta" href="#rsvp">我要報名 <small>RSVP</small> 🎁</a>
+  </header>
+
+  <!-- ===== info ===== -->
+  <section class="wrap" id="info">
+    <div class="sec-head">
+      <h2>活動資訊</h2><span class="en">Party Details</span>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="ico">📅</div>
+        <h3>日期 Date</h3>
+        <div class="sub">Dec 21 / 22 / 23・Evening</div>
+        <p><strong>12/21（一）、12/22（二）、12/23（三）晚上擇一</strong><br>看大家投票，最多人可以的那晚就是它！</p>
+      </div>
+      <div class="card">
+        <div class="ico">📍</div>
+        <h3>地點 Venue</h3>
+        <div class="sub">TBA・Easy to get to</div>
+        <p>看最後人數決定，一定選<strong>交通方便</strong>的地方。確定後在 LINE 群組公布。</p>
+      </div>
+      <div class="card">
+        <div class="ico">🍽️</div>
+        <h3>費用 Cost</h3>
+        <div class="sub">Depends on the restaurant</div>
+        <p>依餐廳而定：<strong>各點各的就各付</strong>；<strong>點合菜就大家分攤</strong>。</p>
+      </div>
+      <div class="card">
+        <div class="ico">⏰</div>
+        <h3>報名截止 RSVP by</h3>
+        <div class="sub">Nov 15, 2026</div>
+        <p><strong>11/15（日）</strong>前填表，才好訂位！</p>
+        <div class="countdown" id="countdown" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== rules ===== -->
+  <section class="wrap" id="rules">
+    <div class="sec-head">
+      <h2>白大象怎麼玩？</h2><span class="en">How White Elephant Works</span>
+      <p>這是歐美很流行的交換禮物玩法，重點不是「抽到什麼」，而是「<b>可以搶</b>」。</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div>
+        <h3>每人帶一份包好的禮物</h3>
+        <p>全部放到禮物堆裡，不寫名字，誰帶的保密。</p>
+        <span class="en-line">Everyone brings one wrapped gift.</span>
+      </div></div>
+      <div class="step"><div>
+        <h3>抽號碼決定順序</h3>
+        <p>1 號先從禮物堆挑一份，當場拆開給大家看。</p>
+        <span class="en-line">Draw numbers. #1 picks and opens a gift.</span>
+      </div></div>
+      <div class="step"><div>
+        <h3>輪到你：拆新的，或搶別人的</h3>
+        <p>可以從禮物堆<b>拆一份新的</b>，或直接<b>搶走別人已經拆開的禮物</b> 😈</p>
+        <span class="en-line">Your turn: open a new gift, or steal an opened one.</span>
+      </div></div>
+      <div class="step"><div>
+        <h3>被搶的人不用哭</h3>
+        <p>可以再拆一份新的，或去搶別人的，但<b>不能馬上搶回</b>剛被拿走的那份。</p>
+        <span class="en-line">If robbed, open a new one or steal another — no instant steal-backs.</span>
+      </div></div>
+      <div class="step"><div>
+        <h3>被搶 2 次就鎖定 🔒</h3>
+        <p>同一份禮物<b>最多被搶 2 次</b>，第 2 次被搶走後就歸新主人，不能再搶。</p>
+        <span class="en-line">A gift is locked after being stolen 2 times.</span>
+      </div></div>
+      <div class="step"><div>
+        <h3>1 號的最後反擊</h3>
+        <p>所有人都拿到禮物後，<b>1 號可以再換一次</b>，跟任何一份沒鎖定的禮物交換。</p>
+        <span class="en-line">At the end, #1 gets one final swap.</span>
+      </div></div>
+    </div>
+    <div class="callout">💡 <b>所以：</b>你帶的禮物越讓人想搶，這場遊戲就越好玩！</div>
+  </section>
+
+  <!-- ===== gift guide ===== -->
+  <section class="wrap" id="gift">
+    <div class="sec-head">
+      <h2>禮物守則</h2><span class="en">Gift Guide</span>
+      <p>家裡現成的、新買的都可以，<b>但要「實用」又「一拿出來大家會尖叫」</b>。</p>
+    </div>
+    <div class="budget">
+      <div class="price"><div class="lbl">上限 Max</div><div class="num">NT$1,000</div><div class="lbl">買的不要超過這個數字</div></div>
+      <div class="price best"><div class="lbl">最佳區間 Sweet spot ✨</div><div class="num">≤ NT$500</div><div class="lbl">五百以下最剛好</div></div>
+    </div>
+    <div class="dodont">
+      <div class="card yes">
+        <h3>🎉 會被搶爆的</h3>
+        <div class="sub">Things people fight over</div>
+        <ul>
+          <li>家裡全新、沒拆過的好東西（別人送的但你用不到也行）</li>
+          <li>好用的生活小物：質感保溫杯、迷你行動電源、好剪刀</li>
+          <li>吃的喝的：精品咖啡豆、厲害的調味料、在地好茶</li>
+          <li>冬天好物：暖暖毯、毛襪、香氛蠟燭</li>
+          <li>大家都能玩的：桌遊、拼圖、有梗的小玩具</li>
+        </ul>
+      </div>
+      <div class="card no">
+        <span class="stamp">白大象拒收</span>
+        <h3>🙅 請不要</h3>
+        <div class="sub">Please don't bring</div>
+        <ul>
+          <li>清倉大掃除的「家裡垃圾」</li>
+          <li>餐盤、碗公、贈品馬克杯（真的出現過）</li>
+          <li>沉香手鍊、開運水晶（也真的出現過 😢）</li>
+          <li>過期或快過期的食品、試用包合集</li>
+          <li>只有你自己覺得好笑的東西</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RSVP ===== -->
+  <section class="wrap" id="rsvp">
+    <div class="sec-head">
+      <h2>報名＋想說的話</h2><span class="en">RSVP</span>
+      <p>11/15 前填好，填完會出現 LINE 群組連結，之後的消息都在群組裡發。</p>
+    </div>
+
+    <div class="form-card">
+      <form id="form" novalidate>
+        <h3>🎄 我要來搶禮物！</h3>
+
+        <div class="field">
+          <label for="name">怎麼稱呼你？ <span class="hint">Name</span></label>
+          <input type="text" id="name" name="name" maxlength="40" autocomplete="nickname" placeholder="名字或大家平常叫你的綽號">
+          <div class="err" data-for="name">請填一下稱呼 🙏</div>
+        </div>
+
+        <div class="field">
+          <label for="line">LINE 顯示名稱 <span class="hint">（拉群組時用來對人）</span></label>
+          <input type="text" id="line" name="line" maxlength="60" placeholder="跟你 LINE 上顯示的一樣">
+          <div class="err" data-for="line">請填 LINE 顯示名稱，才拉得到你</div>
+        </div>
+
+        <div class="field">
+          <span class="lbl">會來嗎？ <span class="hint">Are you coming?</span></span>
+          <div class="chips" role="radiogroup">
+            <label class="chip"><input type="radio" name="status" value="一定到"><span>🙋 一定到<small>I'm in!</small></span></label>
+            <label class="chip"><input type="radio" name="status" value="想去看日期"><span>🤔 想去，看日期<small>Depends on date</small></span></label>
+            <label class="chip"><input type="radio" name="status" value="這次不行"><span>🥲 這次不行<small>Can't make it</small></span></label>
+          </div>
+          <div class="err" data-for="status">請選一個</div>
+        </div>
+
+        <div class="field" id="datesField">
+          <span class="lbl">哪幾晚可以？（可複選） <span class="hint">Which evenings work?</span></span>
+          <div class="chips dates">
+            <label class="chip"><input type="checkbox" name="dates" value="12/21(一)"><span>12/21（一）<small>Mon</small></span></label>
+            <label class="chip"><input type="checkbox" name="dates" value="12/22(二)"><span>12/22（二）<small>Tue</small></span></label>
+            <label class="chip"><input type="checkbox" name="dates" value="12/23(三)"><span>12/23（三）<small>Wed</small></span></label>
+          </div>
+          <div class="err" data-for="dates">至少選一晚</div>
+        </div>
+
+        <div class="field" id="plusField">
+          <label for="plus">會帶伴嗎？ <span class="hint">每位參加的人都要帶一份禮物喔</span></label>
+          <select id="plus" name="plus">
+            <option value="0">只有我自己</option>
+            <option value="1">+1（帶 1 位）</option>
+            <option value="2">+2（帶 2 位）</option>
+            <option value="3">+3（帶 3 位）</option>
+          </select>
+        </div>
+
+        <div class="field" id="dietField">
+          <label for="diet">飲食禁忌 <span class="hint">素食、不吃牛、過敏…沒有可以空白</span></label>
+          <input type="text" id="diet" name="diet" maxlength="100">
+        </div>
+
+        <div class="field">
+          <label for="message">想說的話 💌 <span class="hint">對活動有任何想法、建議、許願都可以</span></label>
+          <textarea id="message" name="message" maxlength="1000" placeholder="例如：想要有交換禮物以外的小遊戲、希望餐廳有包廂…"></textarea>
+        </div>
+
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <button class="cta submit" type="submit" id="submitBtn">送出報名 🎁</button>
+        <div class="err" id="sendErr" style="text-align:center"></div>
+        <p class="note">資料只用在這次聚會的統計和聯絡。資料填錯了重新填一次就好，以最新的一筆為準。</p>
+      </form>
+
+      <div class="done" id="done">
+        <div style="font-size:3rem">🎉🐘🎁</div>
+        <h3>收到了，謝謝你！</h3>
+        <p id="doneMsg">最後日期、地點都會在 LINE 群組公布。</p>
+        <div class="line-box" id="lineBox">
+          <b>加入 LINE 群組「白大象情報站」</b>
+          <div style="font-size:.9rem;opacity:.9">之後的消息都在這裡發</div>
+          <a id="lineLink" href="#" target="_blank" rel="noopener">加入群組 Join</a>
+          <div><div id="qr"></div></div>
+        </div>
+        <p id="lineSoon" style="display:none">LINE 群組連結稍後會私訊給你 📩</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="en">Merry Christmas & see you there!</div>
+    <div>🎄 有問題直接 LINE 我 🎄</div>
+  </footer>
+</main>
+
+<div id="reveal" role="dialog" aria-modal="true" aria-label="彩蛋">
+  <div class="box">
+    <div class="big">4.0</div>
+    <p>12.22 有人偷偷升級到 4.0</p>
+    <small>噓…你發現了 🤫 幫忙保密喔</small><br>
+    <button class="cta" id="revealClose">我會保密 🤐</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+/* ===== 設定：部署前把這兩個網址填好（見 SETUP.md） ===== */
+const CONFIG = {
+  ENDPOINT: "",   // Google Apps Script 網頁應用程式網址（.../exec）
+  LINE_URL: ""    // LINE 群組邀請連結（https://line.me/R/ti/g/...）
+};
+const DEADLINE = new Date("2026-11-15T23:59:59+08:00");
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* lights */
+(function(){
+  const el = document.getElementById("lights");
+  const n = Math.max(10, Math.floor(innerWidth / 34));
+  el.innerHTML = "<i></i>".repeat(n);
+})();
+
+/* bokeh */
+(function(){
+  const el = document.getElementById("bokeh");
+  const colors = ["#f2c14e","#ff4d6d","#7fd6b0","#ffe39a","#8ec5ff"];
+  for (let i = 0; i < 18; i++) {
+    const s = document.createElement("span");
+    const size = 20 + Math.random() * 90;
+    s.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;top:${Math.random()*100}%;` +
+      `background:radial-gradient(circle,${colors[i%colors.length]},transparent 70%);animation-delay:${-Math.random()*14}s`;
+    el.appendChild(s);
+  }
+})();
+
+/* snow */
+(function(){
+  if (reduced) return;
+  const c = document.getElementById("snow"), ctx = c.getContext("2d");
+  let w, h, flakes = [];
+  function resize(){
+    w = c.width = innerWidth * devicePixelRatio; h = c.height = innerHeight * devicePixelRatio;
+    c.style.width = innerWidth + "px"; c.style.height = innerHeight + "px";
+    const n = Math.min(140, Math.floor(innerWidth / 8));
+    flakes = Array.from({length:n}, () => ({x:Math.random()*w, y:Math.random()*h, r:(Math.random()*2.6+.8)*devicePixelRatio, s:Math.random()*.6+.3, d:Math.random()*Math.PI*2}));
+  }
+  function tick(){
+    ctx.clearRect(0,0,w,h);
+    for (const f of flakes) {
+      f.y += f.s * devicePixelRatio; f.d += .01; f.x += Math.sin(f.d) * .4 * devicePixelRatio;
+      if (f.y > h) { f.y = -5; f.x = Math.random()*w; }
+      ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, Math.PI*2);
+      ctx.fillStyle = "rgba(255,255,255," + (.4 + f.r/(8*devicePixelRatio)) + ")"; ctx.fill();
+    }
+    requestAnimationFrame(tick);
+  }
+  addEventListener("resize", resize); resize(); tick();
+})();
+
+/* countdown */
+(function(){
+  const el = document.getElementById("countdown");
+  function render(){
+    const ms = DEADLINE - Date.now();
+    if (ms <= 0) { el.innerHTML = "<div><b>⏳</b><span>報名已截止，想來請直接 LINE 我</span></div>"; return; }
+    const d = Math.floor(ms/864e5), hr = Math.floor(ms/36e5)%24, m = Math.floor(ms/6e4)%60;
+    el.innerHTML = `<div><b>${d}</b><span>天</span></div><div><b>${hr}</b><span>時</span></div><div><b>${m}</b><span>分</span></div>`;
+  }
+  render(); setInterval(render, 30000);
+})();
+
+/* confetti */
+function confetti(){
+  if (reduced) return;
+  const c = document.getElementById("confetti"), ctx = c.getContext("2d");
+  c.width = innerWidth; c.height = innerHeight;
+  const colors = ["#f2c14e","#ffe39a","#d42a55","#7fd6b0","#ffffff"];
+  const ps = Array.from({length:180}, () => ({x:innerWidth/2, y:innerHeight/2, vx:(Math.random()-.5)*16, vy:Math.random()*-16-4,
+    s:Math.random()*8+4, r:Math.random()*6, vr:(Math.random()-.5)*.4, c:colors[Math.floor(Math.random()*colors.length)]}));
+  let t = 0;
+  (function f(){
+    ctx.clearRect(0,0,c.width,c.height);
+    for (const p of ps) {
+      p.vy += .35; p.vx *= .99; p.x += p.vx; p.y += p.vy; p.r += p.vr;
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r); ctx.fillStyle = p.c; ctx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2); ctx.restore();
+    }
+    if (++t < 220) requestAnimationFrame(f); else ctx.clearRect(0,0,c.width,c.height);
+  })();
+}
+
+/* easter egg: knock the golden egg 4 times */
+(function(){
+  const egg = document.getElementById("egg"), scene = document.getElementById("scene");
+  const reveal = document.getElementById("reveal");
+  const words = ["叩", "叩叩", "喀…", "啪！"];
+  let knocks = 0;
+  function knock(ev){
+    knocks++;
+    egg.classList.remove("wiggle"); void egg.getBBox(); egg.classList.add("wiggle");
+    egg.classList.remove("c1","c2","c3");
+    if (knocks < 4) egg.classList.add("c" + knocks);
+    const r = scene.getBoundingClientRect(), b = egg.getBoundingClientRect();
+    const k = document.createElement("span");
+    k.className = "knock"; k.textContent = words[Math.min(knocks,4)-1];
+    k.style.left = (b.left - r.left + b.width) + "px"; k.style.top = (b.top - r.top - 6) + "px";
+    scene.appendChild(k); setTimeout(() => k.remove(), 900);
+    if (knocks >= 4) {
+      knocks = 0;
+      setTimeout(() => { reveal.classList.add("show"); confetti(); }, 250);
+    }
+  }
+  egg.addEventListener("click", knock);
+  egg.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); knock(); } });
+  document.getElementById("revealClose").addEventListener("click", () => reveal.classList.remove("show"));
+  reveal.addEventListener("click", e => { if (e.target === reveal) reveal.classList.remove("show"); });
+  // a little wiggle now and then, to tempt curious people
+  if (!reduced) setInterval(() => { if (!knocks) { egg.classList.remove("wiggle"); void egg.getBBox(); egg.classList.add("wiggle"); } }, 7000);
+})();
+
+/* form */
+(function(){
+  const form = document.getElementById("form");
+  const $ = s => form.querySelector(s);
+  const showErr = (k, on) => form.querySelector(`.err[data-for="${k}"]`).classList.toggle("show", on);
+  const attendFields = ["datesField","plusField","dietField"].map(id => document.getElementById(id));
+
+  form.addEventListener("change", e => {
+    if (e.target.name === "status") {
+      const no = e.target.value === "這次不行";
+      attendFields.forEach(f => f.style.display = no ? "none" : "");
+    }
+  });
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const status = ($("input[name=status]:checked") || {}).value || "";
+    const data = {
+      name: $("#name").value.trim(),
+      line: $("#line").value.trim(),
+      status,
+      dates: status === "這次不行" ? [] : [...form.querySelectorAll("input[name=dates]:checked")].map(i => i.value),
+      plus: status === "這次不行" ? 0 : Number($("#plus").value),
+      diet: status === "這次不行" ? "" : $("#diet").value.trim(),
+      message: $("#message").value.trim(),
+      website: form.website.value
+    };
+    const bad = {name: !data.name, line: !data.line, status: !status, dates: status && status !== "這次不行" && !data.dates.length};
+    Object.entries(bad).forEach(([k,v]) => showErr(k, !!v));
+    const firstBad = Object.keys(bad).find(k => bad[k]);
+    if (firstBad) { form.querySelector(`.err[data-for="${firstBad}"]`).scrollIntoView({behavior:"smooth", block:"center"}); return; }
+
+    const btn = document.getElementById("submitBtn"), sendErr = document.getElementById("sendErr");
+    sendErr.classList.remove("show");
+    if (!CONFIG.ENDPOINT) { sendErr.textContent = "報名系統還在設定中，請稍後再試 🙏"; sendErr.classList.add("show"); return; }
+    btn.disabled = true; btn.textContent = "送出中…";
+    try {
+      // Apps Script 不回 CORS 標頭，用 no-cors 送出（看不到回應，但資料會寫入）
+      await fetch(CONFIG.ENDPOINT, {method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify(data)});
+      showDone(status);
+    } catch (err) {
+      sendErr.textContent = "網路好像斷了，再按一次試試看"; sendErr.classList.add("show");
+      btn.disabled = false; btn.textContent = "送出報名 🎁";
+    }
+  });
+
+  function showDone(status){
+    form.style.display = "none";
+    const done = document.getElementById("done");
+    done.classList.add("show");
+    if (status === "這次不行") document.getElementById("doneMsg").textContent = "好可惜！還是可以先加群組，看大家搶得多慘 😆";
+    if (CONFIG.LINE_URL) {
+      document.getElementById("lineLink").href = CONFIG.LINE_URL;
+      if (window.QRCode) new QRCode(document.getElementById("qr"), {text: CONFIG.LINE_URL, width: 150, height: 150});
+    } else {
+      document.getElementById("lineBox").style.display = "none";
+      document.getElementById("lineSoon").style.display = "";
+    }
+    done.scrollIntoView({behavior:"smooth", block:"center"});
+    confetti();
+  }
+})();
+</script>
+</body>
+</html>
