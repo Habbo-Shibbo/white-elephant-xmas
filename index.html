@@ -118,7 +118,7 @@ section{padding:46px 0}
 .price.best{background:linear-gradient(160deg,rgba(14,74,55,.85),rgba(6,38,28,.7)); border-color:var(--mint)}
 .price.best .num{color:var(--mint)}
 .price .lbl{font-size:.9rem; color:var(--muted)}
-.dodont{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.dodont{display:grid; gap:16px; max-width:640px; margin:0 auto}
 .dodont .card.yes{border-color:rgba(127,214,176,.55)}
 .dodont .card.no{border-color:rgba(255,77,109,.5); background:linear-gradient(160deg,rgba(179,22,63,.28),rgba(58,10,26,.35))}
 .dodont ul{margin:10px 0 0; padding:0; list-style:none}
@@ -195,7 +195,6 @@ footer .en{font-size:1.6rem}
     <span class="badge">🎄 CHRISTMAS PARTY 2026 🎄</span>
     <h1>白大象<br>聖誕禮物交換</h1>
     <div class="en">White Elephant Gift Exchange</div>
-    <p class="lead">帶一份禮物來，抽號碼、拆禮物、<b>搶禮物</b>！<br>友情會不會在今晚破裂？歡迎來挑戰 🐘</p>
 
     <div class="scene" id="scene">
       <svg viewBox="0 0 520 330" aria-hidden="false" role="img" aria-label="戴聖誕帽的白大象和聖誕樹">
@@ -296,7 +295,7 @@ footer .en{font-size:1.6rem}
         <div class="ico">📍</div>
         <h3>地點 Venue</h3>
         <div class="sub">TBA・Easy to get to</div>
-        <p>看最後人數決定，一定選<strong>交通方便</strong>的地方。確定後在 LINE 群組公布。</p>
+        <p>看最後人數決定，一定選<strong>交通方便</strong>的地方。確定後在 LINE 社群公布。</p>
       </div>
       <div class="card">
         <div class="ico">🍽️</div>
@@ -352,41 +351,29 @@ footer .en{font-size:1.6rem}
         <span class="en-line">At the end, #1 gets one final swap.</span>
       </div></div>
     </div>
-    <div class="callout">💡 <b>所以：</b>你帶的禮物越讓人想搶，這場遊戲就越好玩！</div>
+    <div class="callout">💡 <b>其實我也有點忘記怎麼玩，憑感覺走</b></div>
   </section>
 
   <!-- ===== gift guide ===== -->
   <section class="wrap" id="gift">
     <div class="sec-head">
       <h2>禮物守則</h2><span class="en">Gift Guide</span>
-      <p>家裡現成的、新買的都可以，<b>但要「實用」又「一拿出來大家會尖叫」</b>。</p>
+      <p>家裡現成的、新買的都可以，<b>但要「實用」或「大家都會喜歡的」</b>。</p>
     </div>
     <div class="budget">
       <div class="price"><div class="lbl">上限 Max</div><div class="num">NT$1,000</div><div class="lbl">買的不要超過這個數字</div></div>
       <div class="price best"><div class="lbl">最佳區間 Sweet spot ✨</div><div class="num">≤ NT$500</div><div class="lbl">五百以下最剛好</div></div>
     </div>
     <div class="dodont">
-      <div class="card yes">
-        <h3>🎉 會被搶爆的</h3>
-        <div class="sub">Things people fight over</div>
-        <ul>
-          <li>家裡全新、沒拆過的好東西（別人送的但你用不到也行）</li>
-          <li>好用的生活小物：質感保溫杯、迷你行動電源、好剪刀</li>
-          <li>吃的喝的：精品咖啡豆、厲害的調味料、在地好茶</li>
-          <li>冬天好物：暖暖毯、毛襪、香氛蠟燭</li>
-          <li>大家都能玩的：桌遊、拼圖、有梗的小玩具</li>
-        </ul>
-      </div>
       <div class="card no">
         <span class="stamp">白大象拒收</span>
         <h3>🙅 請不要</h3>
         <div class="sub">Please don't bring</div>
         <ul>
           <li>清倉大掃除的「家裡垃圾」</li>
-          <li>餐盤、碗公、贈品馬克杯（真的出現過）</li>
-          <li>沉香手鍊、開運水晶（也真的出現過 😢）</li>
+          <li>餐盤、碗公、贈品馬克杯</li>
+          <li>沉香手鍊、開運水晶</li>
           <li>過期或快過期的食品、試用包合集</li>
-          <li>只有你自己覺得好笑的東西</li>
         </ul>
       </div>
     </div>
@@ -396,7 +383,7 @@ footer .en{font-size:1.6rem}
   <section class="wrap" id="rsvp">
     <div class="sec-head">
       <h2>報名＋想說的話</h2><span class="en">RSVP</span>
-      <p>11/15 前填好，填完會出現 LINE 群組連結，之後的消息都在群組裡發。</p>
+      <p>11/15 前填好，填完會出現 LINE 社群連結，之後的消息都在社群裡發。</p>
     </div>
 
     <div class="form-card">
@@ -410,9 +397,9 @@ footer .en{font-size:1.6rem}
         </div>
 
         <div class="field">
-          <label for="line">LINE 顯示名稱 <span class="hint">（拉群組時用來對人）</span></label>
-          <input type="text" id="line" name="line" maxlength="60" placeholder="跟你 LINE 上顯示的一樣">
-          <div class="err" data-for="line">請填 LINE 顯示名稱，才拉得到你</div>
+          <label for="line">LINE 社群暱稱 <span class="hint">（加入社群時請用同一個暱稱，方便對人）</span></label>
+          <input type="text" id="line" name="line" maxlength="60" placeholder="加入社群時要用的暱稱">
+          <div class="err" data-for="line">請填暱稱，才對得到你</div>
         </div>
 
         <div class="field">
@@ -465,14 +452,14 @@ footer .en{font-size:1.6rem}
       <div class="done" id="done">
         <div style="font-size:3rem">🎉🐘🎁</div>
         <h3>收到了，謝謝你！</h3>
-        <p id="doneMsg">最後日期、地點都會在 LINE 群組公布。</p>
+        <p id="doneMsg">最後日期、地點都會在 LINE 社群公布。</p>
         <div class="line-box" id="lineBox">
-          <b>加入 LINE 群組「白大象情報站」</b>
+          <b>加入 LINE 社群「2026白大象聖誕禮物交換」</b>
           <div style="font-size:.9rem;opacity:.9">之後的消息都在這裡發</div>
-          <a id="lineLink" href="#" target="_blank" rel="noopener">加入群組 Join</a>
+          <a id="lineLink" href="#" target="_blank" rel="noopener">加入社群 Join</a>
           <div><div id="qr"></div></div>
         </div>
-        <p id="lineSoon" style="display:none">LINE 群組連結稍後會私訊給你 📩</p>
+        <p id="lineSoon" style="display:none">LINE 社群連結稍後會私訊給你 📩</p>
       </div>
     </div>
   </section>
@@ -497,7 +484,7 @@ footer .en{font-size:1.6rem}
 /* ===== 設定：部署前把這兩個網址填好（見 SETUP.md） ===== */
 const CONFIG = {
   ENDPOINT: "",   // Google Apps Script 網頁應用程式網址（.../exec）
-  LINE_URL: ""    // LINE 群組邀請連結（https://line.me/R/ti/g/...）
+  LINE_URL: ""    // LINE 社群邀請連結（https://line.me/ti/g2/...）
 };
 const DEADLINE = new Date("2026-11-15T23:59:59+08:00");
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -656,7 +643,7 @@ function confetti(){
     form.style.display = "none";
     const done = document.getElementById("done");
     done.classList.add("show");
-    if (status === "這次不行") document.getElementById("doneMsg").textContent = "好可惜！還是可以先加群組，看大家搶得多慘 😆";
+    if (status === "這次不行") document.getElementById("doneMsg").textContent = "好可惜！還是可以先加社群，看大家搶得多慘 😆";
     if (CONFIG.LINE_URL) {
       document.getElementById("lineLink").href = CONFIG.LINE_URL;
       if (window.QRCode) new QRCode(document.getElementById("qr"), {text: CONFIG.LINE_URL, width: 150, height: 150});
