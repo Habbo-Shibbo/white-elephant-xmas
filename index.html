@@ -476,23 +476,23 @@ function confetti(){
   })();
 }
 
-/* easter egg: knock the golden egg 4 times */
+/* easter egg: knock the golden egg twice */
 (function(){
   const egg = document.getElementById("egg"), scene = document.getElementById("scene");
   const reveal = document.getElementById("reveal");
-  const words = ["叩", "叩叩", "喀…", "啪！"];
+  const words = ["叩叩…喀", "啪！"];
   let knocks = 0;
   function knock(ev){
     knocks++;
     egg.classList.remove("wiggle"); void egg.getBBox(); egg.classList.add("wiggle");
     egg.classList.remove("c1","c2","c3");
-    if (knocks < 4) egg.classList.add("c" + knocks);
+    if (knocks < 2) egg.classList.add("c3");
     const r = scene.getBoundingClientRect(), b = egg.getBoundingClientRect();
     const k = document.createElement("span");
-    k.className = "knock"; k.textContent = words[Math.min(knocks,4)-1];
+    k.className = "knock"; k.textContent = words[Math.min(knocks,2)-1];
     k.style.left = (b.left - r.left + b.width) + "px"; k.style.top = (b.top - r.top - 6) + "px";
     scene.appendChild(k); setTimeout(() => k.remove(), 900);
-    if (knocks >= 4) {
+    if (knocks >= 2) {
       knocks = 0;
       setTimeout(() => { reveal.classList.add("show"); confetti(); }, 250);
     }
