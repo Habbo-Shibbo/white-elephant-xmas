@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>白大象聖誕禮物交換</title>
-<meta name="description" content="White Elephant Gift Exchange・12/21–12/23 晚上・報名到 11/15">
+<meta name="description" content="White Elephant Gift Exchange・12/21–12/23 晚上・11/15 前加入 LINE 群組">
 <meta property="og:title" content="🐘🎄 白大象聖誕禮物交換 White Elephant Gift Exchange">
-<meta property="og:description" content="12/21–12/23 擇一晚上，帶一份「拿出來大家會尖叫」的禮物來搶！報名到 11/15。">
+<meta property="og:description" content="12/21–12/23 擇一晚上，帶一份實用、大家都會喜歡的禮物來搶！11/15 前加入 LINE 群組。">
 <meta name="theme-color" content="#3a0a1a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -128,40 +128,12 @@ section{padding:46px 0}
 .no li::before{content:"🚫"; position:absolute; left:0}
 .stamp{position:absolute; right:-8px; top:14px; transform:rotate(12deg); border:3px solid #ff4d6d; color:#ff4d6d; font:900 .85rem "Noto Sans TC"; padding:3px 10px; border-radius:8px; letter-spacing:.1em; opacity:.85}
 
-/* form */
-.form-card{max-width:640px; margin:0 auto; background:linear-gradient(170deg,rgba(255,246,230,.97),#fbe9cf); color:var(--ink); border-radius:28px; padding:28px 22px; box-shadow:0 30px 60px rgba(0,0,0,.45); position:relative}
-.form-card::before{content:""; position:absolute; inset:-6px; border-radius:32px; z-index:-1;
-  background:repeating-linear-gradient(45deg,var(--berry) 0 14px,#fff 14px 28px,var(--pine) 28px 42px,#fff 42px 56px)}
-.form-card h3{font-size:1.4rem; color:var(--wine); text-align:center}
-.field{margin-top:18px}
-.field > label, .field > .lbl{display:block; font-weight:700; color:var(--wine); margin-bottom:6px}
-.field .hint{font-weight:400; font-size:.85rem; color:#7a5a4a}
-input[type=text], textarea, select{width:100%; padding:12px 14px; border-radius:14px; border:2px solid #e8cfa8; background:#fffaf2; font:500 1rem "Noto Sans TC"; color:var(--ink); transition:border-color .2s, box-shadow .2s}
-input[type=text]:focus, textarea:focus, select:focus{outline:0; border-color:var(--berry); box-shadow:0 0 0 4px rgba(179,22,63,.15)}
-textarea{min-height:110px; resize:vertical}
-.chips{display:flex; flex-wrap:wrap; gap:10px}
-.chip{position:relative}
-.chip input{position:absolute; opacity:0; inset:0; cursor:pointer}
-.chip span{display:block; padding:10px 16px; border-radius:16px; border:2px solid #e8cfa8; background:#fffaf2; font-weight:500; cursor:pointer; transition:all .18s; text-align:center; line-height:1.35}
-.chip span small{display:block; font-size:.75rem; color:#8a6a5a}
-.chip input:checked + span{background:linear-gradient(135deg,var(--berry),var(--wine)); color:#fff; border-color:var(--wine); transform:translateY(-2px); box-shadow:0 6px 14px rgba(109,11,38,.3)}
-.chip input:checked + span small{color:var(--gold-soft)}
-.chip input:focus-visible + span{outline:3px solid var(--gold); outline-offset:2px}
-.err{color:var(--berry); font-size:.88rem; margin-top:6px; display:none}
-.err.show{display:block}
-.hp{position:absolute; left:-9999px}
-.submit{width:100%; justify-content:center; margin-top:26px; color:#fff; background:linear-gradient(135deg,#d42a55,var(--wine)); box-shadow:0 10px 24px rgba(109,11,38,.35)}
-.submit[disabled]{opacity:.6; cursor:wait}
-.note{font-size:.82rem; color:#7a5a4a; text-align:center; margin-top:12px}
-
-.done{display:none; text-align:center}
-.done.show{display:block}
-.done h3{font-size:1.6rem}
-.line-box{margin:20px auto 0; padding:18px; border-radius:20px; background:#06c755; color:#fff; max-width:360px}
-.line-top{margin:0 auto 34px; text-align:center}
+/* LINE join */
+.line-box{margin:0 auto; padding:26px 20px; border-radius:24px; background:linear-gradient(160deg,#08d65e,#06b04b); color:#fff; max-width:420px; text-align:center; box-shadow:0 20px 50px rgba(6,199,85,.3)}
+.line-box .tip{font-size:.85rem; opacity:.9; margin-top:12px}
 .line-box a{display:inline-block; margin-top:10px; padding:12px 26px; border-radius:99px; background:#fff; color:#06a548; font-weight:700; text-decoration:none}
-#qr,.qr{background:#fff; padding:10px; border-radius:12px; display:inline-block; margin-top:12px}
-#qr img, #qr canvas, .qr img, .qr canvas{display:block; width:150px; height:150px}
+.qr{background:#fff; padding:10px; border-radius:12px; display:inline-block; margin-top:12px}
+.qr img, .qr canvas{display:block; width:150px; height:150px}
 
 footer{text-align:center; padding:40px 16px 60px; color:var(--muted); font-size:.85rem}
 footer .en{font-size:1.6rem}
@@ -276,7 +248,7 @@ footer .en{font-size:1.6rem}
       </svg>
     </div>
 
-    <a class="cta" href="#rsvp">我要報名 <small>RSVP</small> 🎁</a>
+    <a class="cta" href="#join">加入 LINE 群組 <small>Join</small> 💚</a>
   </header>
 
   <!-- ===== info ===== -->
@@ -289,13 +261,13 @@ footer .en{font-size:1.6rem}
         <div class="ico">📅</div>
         <h3>日期 Date</h3>
         <div class="sub">Dec 21 / 22 / 23・Evening</div>
-        <p><strong>12/21（一）、12/22（二）、12/23（三）晚上擇一</strong><br>會在 LINE 社群投票，最多人可以的那晚就是它！</p>
+        <p><strong>12/21（一）、12/22（二）、12/23（三）晚上擇一</strong><br>會在 LINE 群組投票，最多人可以的那晚就是它！</p>
       </div>
       <div class="card">
         <div class="ico">📍</div>
         <h3>地點 Venue</h3>
         <div class="sub">TBA・Easy to get to</div>
-        <p>看最後人數決定，一定選<strong>交通方便</strong>的地方。確定後在 LINE 社群公布。</p>
+        <p>看最後人數決定，一定選<strong>交通方便</strong>的地方。確定後在 LINE 群組公布。</p>
       </div>
       <div class="card">
         <div class="ico">🍽️</div>
@@ -307,7 +279,7 @@ footer .en{font-size:1.6rem}
         <div class="ico">⏰</div>
         <h3>報名截止 RSVP by</h3>
         <div class="sub">Nov 15, 2026</div>
-        <p><strong>11/15（日）</strong>前填表，才好訂位！</p>
+        <p><strong>11/15（日）</strong>前加入 LINE 群組，才好訂位！</p>
         <div class="countdown" id="countdown" aria-live="polite"></div>
       </div>
     </div>
@@ -379,86 +351,18 @@ footer .en{font-size:1.6rem}
     </div>
   </section>
 
-  <!-- ===== RSVP ===== -->
-  <section class="wrap" id="rsvp">
+  <!-- ===== join ===== -->
+  <section class="wrap" id="join">
     <div class="sec-head">
-      <h2>報名＋想說的話</h2><span class="en">RSVP</span>
-      <p>11/15 前填好，之後的消息都在 LINE 群組裡發。</p>
+      <h2>加入 LINE 群組</h2><span class="en">Join us on LINE</span>
+      <p>11/15 前加入。日期投票、人數統計、地點公布，還有想說的話，都在群組裡。</p>
     </div>
-
-    <div class="line-box line-top">
-      <b style="font-size:1.15rem">如果會參加，請加入 LINE 群組</b>
-      <div style="font-size:.9rem;opacity:.9">日期投票、地點公布都在群組裡</div>
+    <div class="line-box">
+      <b style="font-size:1.2rem">如果會參加，請加入 LINE 群組</b>
       <a id="lineTopLink" href="#" target="_blank" rel="noopener">加入群組 Join</a>
       <div><div id="qrTop" class="qr"></div></div>
-      <div id="lineTopSoon" style="display:none;margin-top:8px">連結即將公布 📩</div>
-    </div>
-
-    <div class="form-card">
-      <form id="form" novalidate>
-        <h3>🎄 我要來搶禮物！</h3>
-
-        <div class="field">
-          <label for="name">怎麼稱呼你？ <span class="hint">Name</span></label>
-          <input type="text" id="name" name="name" maxlength="40" autocomplete="nickname" placeholder="名字或大家平常叫你的綽號">
-          <div class="err" data-for="name">請填一下稱呼 🙏</div>
-        </div>
-
-        <div class="field">
-          <label for="line">LINE 社群暱稱 <span class="hint">（加入社群時請用同一個暱稱，方便對人）</span></label>
-          <input type="text" id="line" name="line" maxlength="60" placeholder="加入社群時要用的暱稱">
-          <div class="err" data-for="line">請填暱稱，才對得到你</div>
-        </div>
-
-        <div class="field">
-          <span class="lbl">會來嗎？ <span class="hint">Are you coming?</span></span>
-          <div class="chips" role="radiogroup">
-            <label class="chip"><input type="radio" name="status" value="一定到"><span>🙋 一定到<small>I'm in!</small></span></label>
-            <label class="chip"><input type="radio" name="status" value="想去看日期"><span>🤔 想去，看日期<small>Depends on date</small></span></label>
-            <label class="chip"><input type="radio" name="status" value="這次不行"><span>🥲 這次不行<small>Can't make it</small></span></label>
-          </div>
-          <div class="err" data-for="status">請選一個</div>
-        </div>
-
-        <div class="field" id="plusField">
-          <label for="plus">會帶伴嗎？ <span class="hint">每位參加的人都要帶一份禮物喔</span></label>
-          <select id="plus" name="plus">
-            <option value="0">只有我自己</option>
-            <option value="1">+1（帶 1 位）</option>
-            <option value="2">+2（帶 2 位）</option>
-            <option value="3">+3（帶 3 位）</option>
-          </select>
-        </div>
-
-        <div class="field" id="dietField">
-          <label for="diet">飲食禁忌 <span class="hint">素食、不吃牛、過敏…沒有可以空白</span></label>
-          <input type="text" id="diet" name="diet" maxlength="100">
-        </div>
-
-        <div class="field">
-          <label for="message">想說的話 💌 <span class="hint">對活動有任何想法、建議、許願都可以</span></label>
-          <textarea id="message" name="message" maxlength="1000" placeholder="例如：想要有交換禮物以外的小遊戲、希望餐廳有包廂…"></textarea>
-        </div>
-
-        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-        <button class="cta submit" type="submit" id="submitBtn">送出報名 🎁</button>
-        <div class="err" id="sendErr" style="text-align:center"></div>
-        <p class="note">資料只用在這次聚會的統計和聯絡。資料填錯了重新填一次就好，以最新的一筆為準。</p>
-      </form>
-
-      <div class="done" id="done">
-        <div style="font-size:3rem">🎉🐘🎁</div>
-        <h3>收到了，謝謝你！</h3>
-        <p id="doneMsg">最後日期、地點都會在 LINE 社群公布。</p>
-        <div class="line-box" id="lineBox">
-          <b>加入 LINE 社群「2026白大象聖誕禮物交換」</b>
-          <div style="font-size:.9rem;opacity:.9">之後的消息都在這裡發</div>
-          <a id="lineLink" href="#" target="_blank" rel="noopener">加入社群 Join</a>
-          <div><div id="qr"></div></div>
-        </div>
-        <p id="lineSoon" style="display:none">LINE 社群連結稍後會私訊給你 📩</p>
-      </div>
+      <div id="lineTopSoon" style="display:none;margin-top:10px">連結即將公布 📩</div>
+      <div class="tip">加入時請用大家認得出來的暱稱 🙏</div>
     </div>
   </section>
 
@@ -479,10 +383,9 @@ footer .en{font-size:1.6rem}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-/* ===== 設定：部署前把這兩個網址填好（見 SETUP.md） ===== */
+/* ===== 設定：LINE 邀請連結（https://line.me/ti/g2/...） ===== */
 const CONFIG = {
-  ENDPOINT: "",   // Google Apps Script 網頁應用程式網址（.../exec）
-  LINE_URL: ""    // LINE 社群邀請連結（https://line.me/ti/g2/...）
+  LINE_URL: ""
 };
 const DEADLINE = new Date("2026-11-15T23:59:59+08:00");
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -591,7 +494,7 @@ function confetti(){
   if (!reduced) setInterval(() => { if (!knocks) { egg.classList.remove("wiggle"); void egg.getBBox(); egg.classList.add("wiggle"); } }, 7000);
 })();
 
-/* LINE join box above the form */
+/* LINE join box */
 (function(){
   if (CONFIG.LINE_URL) {
     document.getElementById("lineTopLink").href = CONFIG.LINE_URL;
@@ -603,67 +506,6 @@ function confetti(){
   }
 })();
 
-/* form */
-(function(){
-  const form = document.getElementById("form");
-  const $ = s => form.querySelector(s);
-  const showErr = (k, on) => form.querySelector(`.err[data-for="${k}"]`).classList.toggle("show", on);
-  const attendFields = ["plusField","dietField"].map(id => document.getElementById(id));
-
-  form.addEventListener("change", e => {
-    if (e.target.name === "status") {
-      const no = e.target.value === "這次不行";
-      attendFields.forEach(f => f.style.display = no ? "none" : "");
-    }
-  });
-
-  form.addEventListener("submit", async e => {
-    e.preventDefault();
-    const status = ($("input[name=status]:checked") || {}).value || "";
-    const data = {
-      name: $("#name").value.trim(),
-      line: $("#line").value.trim(),
-      status,
-      plus: status === "這次不行" ? 0 : Number($("#plus").value),
-      diet: status === "這次不行" ? "" : $("#diet").value.trim(),
-      message: $("#message").value.trim(),
-      website: form.website.value
-    };
-    const bad = {name: !data.name, line: !data.line, status: !status};
-    Object.entries(bad).forEach(([k,v]) => showErr(k, !!v));
-    const firstBad = Object.keys(bad).find(k => bad[k]);
-    if (firstBad) { form.querySelector(`.err[data-for="${firstBad}"]`).scrollIntoView({behavior:"smooth", block:"center"}); return; }
-
-    const btn = document.getElementById("submitBtn"), sendErr = document.getElementById("sendErr");
-    sendErr.classList.remove("show");
-    if (!CONFIG.ENDPOINT) { sendErr.textContent = "報名系統還在設定中，請稍後再試 🙏"; sendErr.classList.add("show"); return; }
-    btn.disabled = true; btn.textContent = "送出中…";
-    try {
-      // Apps Script 不回 CORS 標頭，用 no-cors 送出（看不到回應，但資料會寫入）
-      await fetch(CONFIG.ENDPOINT, {method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify(data)});
-      showDone(status);
-    } catch (err) {
-      sendErr.textContent = "網路好像斷了，再按一次試試看"; sendErr.classList.add("show");
-      btn.disabled = false; btn.textContent = "送出報名 🎁";
-    }
-  });
-
-  function showDone(status){
-    form.style.display = "none";
-    const done = document.getElementById("done");
-    done.classList.add("show");
-    if (status === "這次不行") document.getElementById("doneMsg").textContent = "好可惜！還是可以先加社群，看大家搶得多慘 😆";
-    if (CONFIG.LINE_URL) {
-      document.getElementById("lineLink").href = CONFIG.LINE_URL;
-      if (window.QRCode) new QRCode(document.getElementById("qr"), {text: CONFIG.LINE_URL, width: 150, height: 150});
-    } else {
-      document.getElementById("lineBox").style.display = "none";
-      document.getElementById("lineSoon").style.display = "";
-    }
-    done.scrollIntoView({behavior:"smooth", block:"center"});
-    confetti();
-  }
-})();
 </script>
 </body>
 </html>
