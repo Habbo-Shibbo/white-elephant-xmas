@@ -1,6 +1,6 @@
 // 白大象報名表後台：貼到 Google 試算表的「擴充功能 → Apps Script」
 const SHEET_NAME = '報名';
-const HEADERS = ['時間', '稱呼', 'LINE 名稱', '會來嗎', '可以的晚上', '帶伴人數', '飲食禁忌', '想說的話'];
+const HEADERS = ['時間', '稱呼', 'LINE 名稱', '會來嗎', '帶伴人數', '飲食禁忌', '想說的話'];
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
@@ -20,7 +20,6 @@ function doPost(e) {
       clean_(d.name, 40),
       clean_(d.line, 60),
       clean_(d.status, 20),
-      (Array.isArray(d.dates) ? d.dates : []).map(x => clean_(x, 20)).join(', '),
       Math.max(0, Math.min(3, Number(d.plus) || 0)),
       clean_(d.diet, 100),
       clean_(d.message, 1000)

@@ -147,7 +147,6 @@ textarea{min-height:110px; resize:vertical}
 .chip input:checked + span{background:linear-gradient(135deg,var(--berry),var(--wine)); color:#fff; border-color:var(--wine); transform:translateY(-2px); box-shadow:0 6px 14px rgba(109,11,38,.3)}
 .chip input:checked + span small{color:var(--gold-soft)}
 .chip input:focus-visible + span{outline:3px solid var(--gold); outline-offset:2px}
-.dates .chip{flex:1 1 140px}
 .err{color:var(--berry); font-size:.88rem; margin-top:6px; display:none}
 .err.show{display:block}
 .hp{position:absolute; left:-9999px}
@@ -289,7 +288,7 @@ footer .en{font-size:1.6rem}
         <div class="ico">📅</div>
         <h3>日期 Date</h3>
         <div class="sub">Dec 21 / 22 / 23・Evening</div>
-        <p><strong>12/21（一）、12/22（二）、12/23（三）晚上擇一</strong><br>看大家投票，最多人可以的那晚就是它！</p>
+        <p><strong>12/21（一）、12/22（二）、12/23（三）晚上擇一</strong><br>會在 LINE 社群投票，最多人可以的那晚就是它！</p>
       </div>
       <div class="card">
         <div class="ico">📍</div>
@@ -410,16 +409,6 @@ footer .en{font-size:1.6rem}
             <label class="chip"><input type="radio" name="status" value="這次不行"><span>🥲 這次不行<small>Can't make it</small></span></label>
           </div>
           <div class="err" data-for="status">請選一個</div>
-        </div>
-
-        <div class="field" id="datesField">
-          <span class="lbl">哪幾晚可以？（可複選） <span class="hint">Which evenings work?</span></span>
-          <div class="chips dates">
-            <label class="chip"><input type="checkbox" name="dates" value="12/21(一)"><span>12/21（一）<small>Mon</small></span></label>
-            <label class="chip"><input type="checkbox" name="dates" value="12/22(二)"><span>12/22（二）<small>Tue</small></span></label>
-            <label class="chip"><input type="checkbox" name="dates" value="12/23(三)"><span>12/23（三）<small>Wed</small></span></label>
-          </div>
-          <div class="err" data-for="dates">至少選一晚</div>
         </div>
 
         <div class="field" id="plusField">
@@ -598,7 +587,7 @@ function confetti(){
   const form = document.getElementById("form");
   const $ = s => form.querySelector(s);
   const showErr = (k, on) => form.querySelector(`.err[data-for="${k}"]`).classList.toggle("show", on);
-  const attendFields = ["datesField","plusField","dietField"].map(id => document.getElementById(id));
+  const attendFields = ["plusField","dietField"].map(id => document.getElementById(id));
 
   form.addEventListener("change", e => {
     if (e.target.name === "status") {
@@ -614,13 +603,12 @@ function confetti(){
       name: $("#name").value.trim(),
       line: $("#line").value.trim(),
       status,
-      dates: status === "這次不行" ? [] : [...form.querySelectorAll("input[name=dates]:checked")].map(i => i.value),
       plus: status === "這次不行" ? 0 : Number($("#plus").value),
       diet: status === "這次不行" ? "" : $("#diet").value.trim(),
       message: $("#message").value.trim(),
       website: form.website.value
     };
-    const bad = {name: !data.name, line: !data.line, status: !status, dates: status && status !== "這次不行" && !data.dates.length};
+    const bad = {name: !data.name, line: !data.line, status: !status};
     Object.entries(bad).forEach(([k,v]) => showErr(k, !!v));
     const firstBad = Object.keys(bad).find(k => bad[k]);
     if (firstBad) { form.querySelector(`.err[data-for="${firstBad}"]`).scrollIntoView({behavior:"smooth", block:"center"}); return; }
