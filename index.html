@@ -158,9 +158,10 @@ textarea{min-height:110px; resize:vertical}
 .done.show{display:block}
 .done h3{font-size:1.6rem}
 .line-box{margin:20px auto 0; padding:18px; border-radius:20px; background:#06c755; color:#fff; max-width:360px}
+.line-top{margin:0 auto 34px; text-align:center}
 .line-box a{display:inline-block; margin-top:10px; padding:12px 26px; border-radius:99px; background:#fff; color:#06a548; font-weight:700; text-decoration:none}
-#qr{background:#fff; padding:10px; border-radius:12px; display:inline-block; margin-top:12px}
-#qr img, #qr canvas{display:block; width:150px; height:150px}
+#qr,.qr{background:#fff; padding:10px; border-radius:12px; display:inline-block; margin-top:12px}
+#qr img, #qr canvas, .qr img, .qr canvas{display:block; width:150px; height:150px}
 
 footer{text-align:center; padding:40px 16px 60px; color:var(--muted); font-size:.85rem}
 footer .en{font-size:1.6rem}
@@ -382,7 +383,15 @@ footer .en{font-size:1.6rem}
   <section class="wrap" id="rsvp">
     <div class="sec-head">
       <h2>報名＋想說的話</h2><span class="en">RSVP</span>
-      <p>11/15 前填好，填完會出現 LINE 社群連結，之後的消息都在社群裡發。</p>
+      <p>11/15 前填好，之後的消息都在 LINE 群組裡發。</p>
+    </div>
+
+    <div class="line-box line-top">
+      <b style="font-size:1.15rem">如果會參加，請加入 LINE 群組</b>
+      <div style="font-size:.9rem;opacity:.9">日期投票、地點公布都在群組裡</div>
+      <a id="lineTopLink" href="#" target="_blank" rel="noopener">加入群組 Join</a>
+      <div><div id="qrTop" class="qr"></div></div>
+      <div id="lineTopSoon" style="display:none;margin-top:8px">連結即將公布 📩</div>
     </div>
 
     <div class="form-card">
@@ -580,6 +589,18 @@ function confetti(){
   reveal.addEventListener("click", e => { if (e.target === reveal) reveal.classList.remove("show"); });
   // a little wiggle now and then, to tempt curious people
   if (!reduced) setInterval(() => { if (!knocks) { egg.classList.remove("wiggle"); void egg.getBBox(); egg.classList.add("wiggle"); } }, 7000);
+})();
+
+/* LINE join box above the form */
+(function(){
+  if (CONFIG.LINE_URL) {
+    document.getElementById("lineTopLink").href = CONFIG.LINE_URL;
+    if (window.QRCode) new QRCode(document.getElementById("qrTop"), {text: CONFIG.LINE_URL, width: 150, height: 150});
+  } else {
+    document.getElementById("lineTopLink").style.display = "none";
+    document.getElementById("qrTop").style.display = "none";
+    document.getElementById("lineTopSoon").style.display = "";
+  }
 })();
 
 /* form */
